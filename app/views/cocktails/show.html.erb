@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="banner-card p-3 m-3">
+      <img src="https://www.donnamoderna.com/wp-content/uploads/2011/01/spritz-allarancia-830x625.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h1><%=@cocktail.name %></h1>
+          <p><%@cocktail.doses.each do |d| %></p>
+          <p>Ingredient: <%=d.ingredient.name %></p>
+          <p>Ingredient: <%=d.description %></p>
+          <%=link_to "delete ingredient", d, method: :delete%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <%= link_to "Home", cocktails_path, class: "btn btn-primary"%>
+  </div>
+</div>
